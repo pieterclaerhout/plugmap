@@ -40,10 +40,7 @@ defmodule Plugmap.Generator do
 
   def add_to_element(new, element) when is_list(new) do
     combine = elem(element, 2) ++ new
-
-    element
-    |> Tuple.delete_at(2)
-    |> Tuple.append(combine)
+    put_elem(element, 2, combine)
   end
 
   def generate_sitemap(root) do
